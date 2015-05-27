@@ -52,7 +52,7 @@ plugins=(git zsh-syntax-highlighting)
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:./node_modules/.bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -108,6 +108,7 @@ pb() {
 
 # Start a local python server.
 alias serve="python -m SimpleHTTPServer > /dev/null 2>&1"
+alias flipshit="source ~/.zshrc"
 
 # FUN
 google() {
@@ -117,4 +118,20 @@ google() {
 swear() {
   cowsay $1
   say $1 -v "Alex"
+}
+
+# Usage:
+# z [directory]
+#   If directory is specified, creates it. If not already created, cds into it.
+#   If no directory is specified, just cd into ~/Projets.
+z() {
+  if [ $# -eq 1 ] ; then
+    if [ -d ~/Projets/$1 ] ; then
+      cd ~/Projets/$1
+    else
+      mkcd ~/Projets/$1
+    fi
+  else
+    cd ~/Projets
+  fi
 }
