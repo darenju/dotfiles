@@ -86,7 +86,7 @@ alias fuck="sudo"
 alias subl="open /Applications/Sublime\ Text.app"
 alias firefox="open /Applications/Firefox.app"
 alias up="uptime"
-alias myip="ipconfig getifaddr en0"
+alias myip="ipconfig getifaddr en0 ; ipconfig getifaddr en4"
 
 # Creates a directory and cds in it.
 mkcd() {
@@ -123,15 +123,16 @@ swear() {
 # Usage:
 # z [directory]
 #   If directory is specified, creates it. If not already created, cds into it.
-#   If no directory is specified, just cd into ~/Projets.
+#   If no directory is specified, just cd into ~/GitHub.
+PROJECTS_DIR=~/GitHub
 z() {
   if [ $# -eq 1 ] ; then
-    if [ -d ~/Projets/$1 ] ; then
-      cd ~/Projets/$1
+    if [ -d $PROJECTS_DIR/$1 ] ; then
+      cd $PROJECTS_DIR/$1
     else
-      mkcd ~/Projets/$1
+      mkcd $PROJECTS_DIR/$1
     fi
   else
-    cd ~/Projets
+    cd $PROJECTS_DIR
   fi
 }
