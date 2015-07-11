@@ -1,0 +1,21 @@
+##
+# Host Database
+#
+# localhost is used to configure the loopback interface
+# when the system is booting.  Do not change this entry.
+##
+127.0.0.1	localhost
+255.255.255.255	broadcasthost
+::1             localhost 
+127.0.0.1	ads.youtube.com
+127.0.0.1	s0.2mdn.net
+127.0.0.1	s1.2mdn.net
+127.0.0.1	googleads.g.doubleclick.net
+127.0.0.1	pubads.g.doubleclick.net
+127.0.0.1	ad.doubleclick.net
+127.0.0.1	static.doubleclick.net
+
+# For my own mental safety…
+127.0.0.1	omegle.com
+127.0.0.1	boards.4chan.org
+127.0.0.1	9gag.com
