@@ -2,12 +2,13 @@ if [ "$(id -u)" != "0" ] ; then
   echo 'Must be ran as root.'
   exit 1
 fi
+USER='julien'
 echo 'Starting setup…'
 echo 'Installing brew… (You will have to download OS X Developer Tools, so stay in front of the computer!)'
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 echo 'brew installed.'
 echo 'Installing wget and node…'
-brew install wget node
+sudo -u ${USER} brew install wget node
 echo 'wget and node installed.'
 echo 'Installing oh-my-zsh...'
 sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
