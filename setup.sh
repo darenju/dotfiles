@@ -59,3 +59,5 @@ echo 'Apps downloaded.'
 
 sudo -u ${USER} open .
 echo 'Setup completed!'
+
+osascript -e 'display notification "Setup completed!" with title "dotfiles"'
