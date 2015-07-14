@@ -11,6 +11,13 @@ echo 'Installing brew… (You will have to download OS X Developer Tools, so sta
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 echo 'brew installed.'
 
+echo 'Setting up git…'
+git config --global user.name "Julien Fradin"
+git config --global user.email "julien@frad.in"
+echo 'git set up.'
+
+echo
+
 echo 'Installing wget and node…'
 sudo -u ${USER} brew install wget node
 echo 'wget and node installed.'
