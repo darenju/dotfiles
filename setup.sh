@@ -35,9 +35,13 @@ mv pure/async.zsh ~/.oh-my-zsh/custom/
 rm -rf pure
 echo 'pure installed.'
 
-echo 'Installing zsh-syntax-highlighting…'
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins --quiet
-echo 'zsh-syntax-highlighting installed.'
+if [ ! -d ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting ] ; then
+  echo 'Installing zsh-syntax-highlighting…'
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins --quiet
+  echo 'zsh-syntax-highlighting installed.'
+else
+  echo 'zsh-syntax-highlighting already installed.'
+fi
 
 echo
 
@@ -57,14 +61,18 @@ echo
 
 echo 'Downloading apps…'
 
+if [ ! -d "./Applications" ] ; then
+  sudo -u ${USER} mkdir "./Applications"
+fi
+
 while read url
 do
-  sudo -u ${USER} wget $url
+  sudo -u ${USER} wget $url -P "./Applications"
 done < apps.url
 
 echo 'Apps downloaded.'
 
-sudo -u ${USER} open .
+sudo -u ${USER} open "./Applications"
 echo 'Setup completed!'
 
 osascript -e 'display notification "Setup completed!" with title "dotfiles"'
