@@ -35,6 +35,10 @@ mv pure/async.zsh ~/.oh-my-zsh/custom/
 rm -rf pure
 echo 'pure installed.'
 
+echo 'Creating ~/.hushlogin…'
+touch ~/.hushlogin
+echo '~/.hushlogin created.'
+
 if [ ! -d ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting ] ; then
   echo 'Installing zsh-syntax-highlighting…'
   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins --quiet
