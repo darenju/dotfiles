@@ -28,6 +28,13 @@ echo 'oh-my-zsh installed.'
 
 echo
 
+echo 'Installing auto-completions…'
+mkdir ~/.oh-my-zsh/completions
+cp _z ~/.oh-my-zsh/completions
+echo 'Auto-completions installed.'
+
+echo
+
 echo 'Installing pure…'
 git clone https://github.com/sindresorhus/pure.git --quiet
 mv pure/pure.zsh ~/.oh-my-zsh/custom/pure.zsh-theme

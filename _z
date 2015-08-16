@@ -1,0 +1,5 @@
+#compdef z
+
+projects=$(ls -m ~/GitHub)
+projects=${projects//, / }
+_arguments "1:Projects:($projects)"
